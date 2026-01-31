@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { CATEGORIES } from './constants';
-import { Game } from './types';
-import Navbar from './components/Navbar';
-import GameCard from './components/GameCard';
-import GamePlayer from './components/GamePlayer';
+import { CATEGORIES } from './constants.ts';
+import { Game } from './types.ts';
+import { gamesData } from './games.ts';
+import Navbar from './components/Navbar.tsx';
+import GameCard from './components/GameCard.tsx';
+import GamePlayer from './components/GamePlayer.tsx';
 
 const App: React.FC = () => {
   const [games, setGames] = useState<Game[]>([]);
@@ -13,22 +14,12 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchGames = async () => {
-      try {
-        setIsLoading(true);
-        const response = await fetch('./games.json');
-        if (!response.ok) throw new Error('Failed to load system library');
-        const data = await response.json();
-        setGames(data);
-      } catch (error) {
-        console.error('Error booting TURBOGRAFX 16:', error);
-      } finally {
-        // Authentic console boot delay
-        setTimeout(() => setIsLoading(false), 1200);
-      }
-    };
-
-    fetchGames();
+    // We use the imported gamesData directly to avoid flaky network requests
+    setGames(gamesData);
+    
+    // Maintain the authentic console boot delay for aesthetic
+    const timer = setTimeout(() => setIsLoading(false), 1200);
+    return () => clearTimeout(timer);
   }, []);
 
   const filteredGames = useMemo(() => {
