@@ -1,9 +1,45 @@
 [
   {
+    "id": "escape-road",
+    "title": "Escape Road",
+    "description": "Put your driving skills to the ultimate test in this high-octane police chase simulator. Outrun the law, dodge obstacles, and navigate through intense traffic to escape the city!",
+    "thumbnail": "https://escaperoad.io/data/image/options/escape-road-logo.jpg",
+    "iframeUrl": "https://azgames.io/game/escape-road/",
+    "category": "Action",
+    "rating": 4.8
+  },
+  {
+    "id": "baldis-basics",
+    "title": "Baldi's Basics Education and Learning",
+    "description": "Oh no! All your notebooks are gone, and Baldi is waiting for you to collect them. A meta-horror game inspired by weird and creepy 90s educational software.",
+    "thumbnail": "https://img.utdstc.com/icon/4c3/844/4c3844114ccfda3293ddf5a040b398ad0116d0c0cc7ba1c5a132f3ffc6b9f9e2:200",
+    "iframeUrl": "https://ubgwtf.gitlab.io/baldi/",
+    "category": "Horror",
+    "rating": 4.6
+  },
+  {
+    "id": "flappy-bird",
+    "title": "Flappy Bird",
+    "description": "The addictive classic that took the world by storm. Tap to flap your wings and navigate through the pipes. How high can you score before crashing?",
+    "thumbnail": "https://techfrontier.com.au/nitropack_static/qoEzaUnVVMmdfnkgmWKdqPZHmHyfhDwG/assets/images/optimized/rev-7f03b38/techfrontier.com.au/wp-content/uploads/2025/07/Remembering-Flappy-Bird.jpg",
+    "iframeUrl": "https://inkyedu118.github.io/g26/class-434/",
+    "category": "Retro",
+    "rating": 4.5
+  },
+  {
+    "id": "drive-mad",
+    "title": "Drive Mad",
+    "description": "Navigate through increasingly difficult obstacle courses in this physics-based driving game. Can you reach the finish line without flipping your vehicle?",
+    "thumbnail": "https://inkyedu118.github.io/img/class-401.png",
+    "iframeUrl": "https://inkyedu118.github.io/g20/class-401/",
+    "category": "Action",
+    "rating": 4.9
+  },
+  {
     "id": "fnaf-1",
     "title": "Five Nights at Freddy's",
     "description": "Welcome to your new summer job at Freddy Fazbear's Pizza. Can you survive five nights of terror while monitoring the security cameras?",
-    "thumbnail": "https://store-images.s-microsoft.com/image/apps.12136.13976193533566168.c56d73e5-020f-4be5-860c-ae506c27e2ca.5b09e795-093a-40a9-ae4c-56913abee733?q=90&w=480&h=270",
+    "thumbnail": "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/c/cb/FNaF1-MobileIcon.png/revision/latest?cb=20240329171625",
     "iframeUrl": "https://irv77.github.io/hd_fnaf/1/",
     "category": "Horror",
     "rating": 4.9
@@ -12,7 +48,7 @@
     "id": "fnaf-2",
     "title": "Five Nights at Freddy's 2",
     "description": "The old and aging animatronics are joined by a new cast of characters. They are kid-friendly, updated with facial recognition, and ready for a show!",
-    "thumbnail": "https://cdn.now.gg/apps-content/com.nowgg.h5.pub501.app51767/ogimage/five-nights-at-freddy-s-2.jpg",
+    "thumbnail": "https://play-lh.googleusercontent.com/GYcyLlHWoZumcal0WmDJJo2rCFyl3Y0mwXm0zaD-C9gC0PJGQMhzOKHfDUVlqSDlag=w600-h300-pc0xffffff-pd",
     "iframeUrl": "https://irv77.github.io/hd_fnaf/2/",
     "category": "Horror",
     "rating": 4.8
@@ -21,16 +57,25 @@
     "id": "fnaf-3",
     "title": "Five Nights at Freddy's 3",
     "description": "Thirty years after Freddy Fazbear's Pizza closed its doors, the events that took place there have become nothing more than a rumor.",
-    "thumbnail": "https://preview.redd.it/dumb-theory-about-what-the-fnaf-3-rare-screens-are-supposed-v0-r47vdt21eb8f1.jpeg?auto=webp&s=0df2c73986165028f0bbd32a30624ecaa616a9b5",
+    "thumbnail": "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/4/4b/FNaF3-MobileIcon.png/revision/latest?cb=20240519230054",
     "iframeUrl": "https://irv77.github.io/hd_fnaf/3/",
     "category": "Horror",
     "rating": 4.7
   },
   {
+    "id": "fnaf-4",
+    "title": "Five Nights at Freddy's 4",
+    "description": "This time, the terror has followed you home. In this final chapter of the Five Nights at Freddy's original story, you must once again defend yourself against Freddy Fazbear, Chica, Bonnie, Foxy, and even worse things that lurk in the shadows.",
+    "thumbnail": "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/3/34/FNaF4-MobileIcon.png/revision/latest?cb=20240519230158",
+    "iframeUrl": "https://irv77.github.io/hd_fnaf/4/",
+    "category": "Horror",
+    "rating": 4.8
+  },
+  {
     "id": "fnaf-sl",
     "title": "Five Nights at Freddy's Sister Location",
     "description": "Welcome to Circus Baby's Pizza World, where family fun and interactivity go beyond anything you've seen at those other pizza establishments!",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMHlp8jJhB1Cz1H9rxYvRnJ-E877lXc5RofQ&s",
+    "thumbnail": "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/2/21/FNaFSL-MobileIcon.png/revision/latest?cb=20240519231345",
     "iframeUrl": "https://irv77.github.io/hd_fnaf/sl/",
     "category": "Horror",
     "rating": 4.8
@@ -39,7 +84,7 @@
     "id": "fnaf-ps",
     "title": "Freddy Fazbear's Pizzeria Simulator",
     "description": "Develop, build, and manage your very own Freddy Fazbear's Pizzeria! What starts as a simple pizza simulator turns into something much more sinister.",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBrZAMtVUk_4LnIB4kN8U3Vg96kipiA9KNEA&s",
+    "thumbnail": "https://play-lh.googleusercontent.com/zDcOTck_4ZjLeJNgil4bpIXUefRUYVqOqlpc8hxeDby8LQh0eZhYDho9U3W_RVg9yuE=w240-h480-rw",
     "iframeUrl": "https://irv77.github.io/hd_fnaf/ps/",
     "category": "Simulator",
     "rating": 4.8
@@ -48,7 +93,7 @@
     "id": "fnaf-ucn",
     "title": "Ultimate Custom Night",
     "description": "The ultimate FNAF mashup, featuring 50 animatronic characters and near-endless customization of your nightmarish challenge.",
-    "thumbnail": "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/2/22/FFPS_Custom_Night.jpg/revision/latest/scale-to-width-down/300?cb=20180222011437",
+    "thumbnail": "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/5/50/UCN-MobileUpdated.png/revision/latest?cb=20240519224249",
     "iframeUrl": "https://irv77.github.io/hd_fnaf/ucn/",
     "category": "Horror",
     "rating": 4.9
@@ -66,10 +111,19 @@
     "id": "fnaf-world",
     "title": "FNAF World",
     "description": "Take control of Freddy and the gang in this colorful RPG adventure! Explore the world of Animatronica and defeat glitches in the system.",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrTgHITFisiAGKkGS-5Pk5YNzrbxev2CLmBw&s",
+    "thumbnail": "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/4/47/Fnaf-world-android.jpg/revision/latest?cb=20240519225852",
     "iframeUrl": "https://irv77.github.io/hd_fnaf/w/",
     "category": "RPG",
     "rating": 4.6
+  },
+  {
+    "id": "onaf-fkumpty",
+    "title": "One Nights at Fkumpty's",
+    "description": "A surreal and terrifying survival challenge. Monitor the cameras, manage your defenses, and survive the bizarre and unpredictable cast of characters in this fan-favorite horror experience.",
+    "thumbnail": "https://play-lh.googleusercontent.com/qfbGhNxzbVOrdueQhj5ax7cxxsYqWOlVpPD2cjnHdkBKIuLxdLe9KqGLABqIG0HqgnQ",
+    "iframeUrl": "https://illuminarchie66.github.io/CS141-Functional-ONAF/",
+    "category": "Horror",
+    "rating": 4.7
   },
   {
     "id": "basket-random",
@@ -81,12 +135,84 @@
     "rating": 4.8
   },
   {
+    "id": "moto-x3m-pool-party",
+    "title": "Moto X3M Pool Party",
+    "description": "Grab your bike, head to the pool, and master insane stunts in this sun-soaked sequel to the legendary Moto X3M. Overcome splashy obstacles and race against the clock!",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpbvpp2bgwK-pLvv4GSTlg_LnNj6KHq48iaA&s",
+    "iframeUrl": "https://games.cdn.famobi.com/html5games/m/moto-x3m-pool-party/v080/?fg_domain=play.famobi.com&fg_aid=A1000-10A0A&fg_uid=b2102250-eb51-4704-9cab-ff296491cc68&fg_pid=30e454d1-6b3e-491b-823b-09cd0cdb27ab&fg_beat=117&original_ref=https%3A%2F%2Fplay.famobi.com%2Fwrapper%2Fmoto-x3m-pool-party%2FA1000-10",
+    "category": "Sports",
+    "rating": 4.9
+  },
+  {
     "id": "slope",
     "title": "Slope",
     "description": "The ultimate speed game that will test your skills. Speed down a randomized slope. The further you go, the faster your ball travels.",
     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjsbIOR-nl31OD0BLvQOr93ks9LHnvR4Krag&s",
     "iframeUrl": "https://selenite1.freetls.fastly.net/resources/semag/slope/index.html",
     "category": "Action",
+    "rating": 4.9
+  },
+  {
+    "id": "stunt-simulator-2",
+    "title": "Stunt Simulator 2",
+    "description": "Push your driving skills to the limit and perform extreme stunts in this open-world racing simulator. Choose your vehicle and conquer the arena!",
+    "thumbnail": "https://unblocked-games.s3.amazonaws.com/media/posts/18/stuntsimulator.jpg",
+    "iframeUrl": "https://d23tskfudfp1j.cloudfront.net/games/2021/unity3/stunt-simulator-2/index.html",
+    "category": "Simulator",
+    "rating": 4.8
+  },
+  {
+    "id": "among-us",
+    "title": "Among Us",
+    "description": "Work together with your crewmates to complete tasks, but stay alert! There are impostors among you trying to sabotage and eliminate the crew.",
+    "thumbnail": "https://assets.nintendo.com/image/upload/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000036098/758ab0b61205081da2466386940752c70e0e5ea43bd39e8b9b13eaa455c69b7e",
+    "iframeUrl": "https://selenite1.freetls.fastly.net/resources/semag/amongus/index.html",
+    "category": "Action",
+    "rating": 4.7
+  },
+  {
+    "id": "phoenix-wright",
+    "title": "Phoenix Wright: Ace Attorney",
+    "description": "The legendary first entry in the series. Defend your clients in intense courtroom battles, investigate crime scenes, and uncover the truth in this classic investigative drama.",
+    "thumbnail": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000015846/a4f21c4638201d9b2037c0e3ead4e90a2f64b6f7af5a6909316daad44b3224b7",
+    "iframeUrl": "https://selenite1.freetls.fastly.net/resources/semag/aceattorneyphoenixwright/index.html",
+    "category": "Strategy",
+    "rating": 5.0
+  },
+  {
+    "id": "ace-attorney-investigations",
+    "title": "Ace Attorney Investigations",
+    "description": "Step into the shoes of Miles Edgeworth and solve complex cases. Use logic and deduction to uncover contradictions and find the truth in this classic investigative adventure.",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMMu3ZJ49JJtPN_aR8sYxXLIiJ5i-NOgRcfA&s",
+    "iframeUrl": "https://selenite1.freetls.fastly.net/resources/semag/aceattorneyinvestigations/index.html",
+    "category": "Strategy",
+    "rating": 4.9
+  },
+  {
+    "id": "trials-and-tribulations",
+    "title": "Ace Attorney Trials and Tribulations",
+    "description": "The grand finale of the original Phoenix Wright trilogy. Face off against the mysterious prosecutor Godot, explore the past of Mia Fey, and uncover the final truths in this emotional courtroom masterpiece.",
+    "thumbnail": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_ds_22/SI_NDS_AceAttorneyTrialsAndTribulations.jpg",
+    "iframeUrl": "https://selenite1.freetls.fastly.net/resources/semag/aceattorneytnt/index.html",
+    "category": "Strategy",
+    "rating": 4.9
+  },
+  {
+    "id": "apollo-justice",
+    "title": "Apollo Justice: Ace Attorney",
+    "description": "Join rookie attorney Apollo Justice in his quest to uncover the truth. Solve challenging cases, analyze evidence, and shout 'Objection!' in this thrilling courtroom drama.",
+    "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2187220/header.jpg?t=1768866052",
+    "iframeUrl": "https://selenite1.freetls.fastly.net/resources/semag/aceattorneyapollojustice/index.html",
+    "category": "Strategy",
+    "rating": 4.9
+  },
+  {
+    "id": "justice-for-all",
+    "title": "Ace Attorney – Justice for All",
+    "description": "The second entry in the Phoenix Wright series. Defend your clients in intense courtroom battles and investigate crime scenes to find the truth behind every case.",
+    "thumbnail": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_ds_22/SI_NDS_PhoenixWrightAceAttorneyJusticeForAll_image1600w.jpg",
+    "iframeUrl": "https://selenite1.freetls.fastly.net/resources/semag/aceattorneyjusticeforall/index.html",
+    "category": "Strategy",
     "rating": 4.9
   },
   {

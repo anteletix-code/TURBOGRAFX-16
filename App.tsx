@@ -12,12 +12,36 @@ const App: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [visitorCount, setVisitorCount] = useState<number>(0);
+  const [totalPlays, setTotalPlays] = useState<number>(0);
+  const [recentlyPlayed, setRecentlyPlayed] = useState<Game[]>([]);
+  
+  // Easter egg state
+  const [secretClicks, setSecretClicks] = useState(0);
+  const [showSecret, setShowSecret] = useState(false);
 
   useEffect(() => {
-    // We use the imported gamesData directly to avoid flaky network requests
     setGames(gamesData);
     
-    // Maintain the authentic console boot delay for aesthetic
+    const storedCount = localStorage.getItem('tg16_access_count');
+    const currentCount = storedCount ? parseInt(storedCount, 10) : 15420;
+    const nextCount = currentCount + 1;
+    localStorage.setItem('tg16_access_count', nextCount.toString());
+    setVisitorCount(nextCount);
+
+    const storedPlays = localStorage.getItem('tg16_total_plays');
+    setTotalPlays(storedPlays ? parseInt(storedPlays, 10) : 8421);
+
+    // Load recently played
+    const storedRecentIds = localStorage.getItem('tg16_recently_played');
+    if (storedRecentIds) {
+      const ids: string[] = JSON.parse(storedRecentIds);
+      const recentGames = ids
+        .map(id => gamesData.find(g => g.id === id))
+        .filter((g): g is Game => !!g);
+      setRecentlyPlayed(recentGames);
+    }
+    
     const timer = setTimeout(() => setIsLoading(false), 1200);
     return () => clearTimeout(timer);
   }, []);
@@ -32,11 +56,35 @@ const App: React.FC = () => {
 
   const handleGameSelect = (game: Game) => {
     setSelectedGame(game);
+    
+    // Update total plays
+    const newPlays = totalPlays + 1;
+    setTotalPlays(newPlays);
+    localStorage.setItem('tg16_total_plays', newPlays.toString());
+
+    // Update recently played
+    setRecentlyPlayed(prev => {
+      const filtered = prev.filter(g => g.id !== game.id);
+      const updated = [game, ...filtered].slice(0, 5);
+      localStorage.setItem('tg16_recently_played', JSON.stringify(updated.map(g => g.id)));
+      return updated;
+    });
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleBackToHome = () => {
     setSelectedGame(null);
+  };
+
+  const handleSecretTrigger = () => {
+    const next = secretClicks + 1;
+    if (next >= 5) {
+      setShowSecret(true);
+      setSecretClicks(0);
+    } else {
+      setSecretClicks(next);
+    }
   };
 
   if (isLoading) {
@@ -76,6 +124,58 @@ const App: React.FC = () => {
         setSearchTerm={setSearchTerm}
       />
 
+      {/* Secret Overlay */}
+      {showSecret && (
+        <div className="fixed inset-0 z-[100] bg-red-950/90 backdrop-blur-2xl flex flex-col items-center justify-center p-4 md:p-12 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+            <div className="w-full h-full bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]"></div>
+          </div>
+          
+          <div className="relative z-10 w-full max-w-4xl flex flex-col items-center gap-8 animate-in fade-in zoom-in duration-500">
+            <div className="flex flex-col items-center text-center space-y-2">
+              <h2 className="font-orbitron text-4xl md:text-6xl font-black text-red-500 italic tracking-[0.2em] animate-pulse">
+                ACCESS GRANTED
+              </h2>
+              <div className="px-4 py-1 bg-red-600 text-white font-orbitron font-black text-[10px] uppercase tracking-[0.5em] rounded">
+                CLASSIFIED SYSTEM ARCHIVE // LEVEL 16
+              </div>
+            </div>
+
+            <div className="relative w-full aspect-video rounded-3xl overflow-hidden border-4 border-red-500/50 shadow-[0_0_50px_rgba(239,68,68,0.4)] bg-black flex flex-col items-center justify-center">
+               <div className="text-center group select-none">
+                 <h3 className="font-orbitron text-7xl md:text-9xl font-black text-white tracking-tighter uppercase drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.6)] transition-all duration-700">
+                   MOVIES
+                 </h3>
+                 <div className="flex items-center gap-4 justify-center -mt-4 md:-mt-8">
+                    <div className="h-px w-12 md:w-24 bg-red-600"></div>
+                    <h3 className="font-orbitron text-4xl md:text-6xl font-black text-red-500 tracking-[0.4em] uppercase drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">
+                      SOON
+                    </h3>
+                    <div className="h-px w-12 md:w-24 bg-red-600"></div>
+                 </div>
+               </div>
+               
+               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-red-900/40 via-transparent to-transparent opacity-60"></div>
+               <div className="absolute top-4 left-4 text-[10px] text-red-500 font-mono font-bold opacity-60 uppercase tracking-[0.3em]">
+                 SEC_ID: 9942-X // AUTH: Y. MUSTARD
+               </div>
+               <div className="absolute bottom-4 right-4 flex items-center gap-2">
+                 <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                 <span className="text-[8px] text-red-500 font-mono font-bold uppercase tracking-widest opacity-60">Buffering Media Stream...</span>
+               </div>
+            </div>
+
+            <button 
+              onClick={() => setShowSecret(false)}
+              className="px-12 py-4 bg-red-600 hover:bg-red-500 text-white font-orbitron font-black text-xs uppercase tracking-[0.3em] rounded-xl transition-all active:scale-95 shadow-lg shadow-red-500/40"
+            >
+              Return to Control Center
+            </button>
+          </div>
+        </div>
+      )}
+
       <main className="flex-grow">
         {selectedGame ? (
           <GamePlayer game={selectedGame} onBack={handleBackToHome} />
@@ -92,7 +192,7 @@ const App: React.FC = () => {
                 <div className="relative z-10 py-16 px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-12">
                   <div className="max-w-3xl text-center md:text-left">
                     <div className="inline-block px-4 py-1.5 bg-black/30 backdrop-blur-md rounded-full border border-white/10 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">
-                      Established 2025
+                      Established 2026
                     </div>
                     <h2 className="font-orbitron text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight italic drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] leading-tight uppercase">
                       "NO KID SHOULD SUFFER IN SCHOOL, SO I'M GIVING THEM AN <span className="text-black/50">ESCAPE.</span>"
@@ -116,13 +216,46 @@ const App: React.FC = () => {
               </div>
             )}
 
+            {/* Recently Played Section */}
+            {recentlyPlayed.length > 0 && !searchTerm && (
+              <section className="mb-12 animate-in fade-in slide-in-from-left-4 duration-500">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 rounded-lg bg-purple-600/20 border border-purple-500/30 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-orbitron text-xs font-black text-white uppercase tracking-[0.3em]">Recently Deployed</h3>
+                    <p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">Continue Session</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                  {recentlyPlayed.map((game) => (
+                    <div key={`recent-${game.id}`} className="scale-90 origin-left">
+                      <GameCard 
+                        game={game} 
+                        onClick={handleGameSelect} 
+                      />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Filter Bar */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-10 pb-2 border-b border-white/5">
-              <div className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
-                </svg>
-                <span className="text-slate-500 font-orbitron text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">Sort Library:</span>
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                  </svg>
+                  <span className="text-slate-500 font-orbitron text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">Sort Library:</span>
+                </div>
+                <div className="hidden lg:flex items-center gap-3 px-5 py-2.5 bg-slate-900/60 rounded-2xl border border-white/10 shadow-2xl turbo-shadow">
+                  <span className="text-[10px] text-slate-400 font-orbitron font-black uppercase tracking-[0.2em]">Total Games:</span>
+                  <span className="text-xl text-purple-400 font-mono font-black tracking-tighter leading-none">{games.length}</span>
+                </div>
               </div>
               <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
                 {CATEGORIES.map((cat) => (
@@ -227,11 +360,24 @@ const App: React.FC = () => {
           <div className="text-slate-600 text-[9px] font-black uppercase tracking-[0.4em] font-orbitron text-center md:text-left">
             © {new Date().getFullYear()} TURBOGRAFX-WEB. BY Y. MUSTARD.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex items-center gap-2 px-3 py-1 bg-slate-900/50 rounded-lg border border-white/5">
+              <span className="text-[8px] text-slate-500 font-orbitron font-black uppercase tracking-widest">System Accesses:</span>
+              <span className="text-[10px] text-purple-500 font-mono font-bold tracking-tighter">{visitorCount.toLocaleString()}</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1 bg-slate-900/50 rounded-lg border border-white/5">
+              <span className="text-[8px] text-slate-500 font-orbitron font-black uppercase tracking-widest">Games Launched:</span>
+              <span className="text-[10px] text-fuchsia-500 font-mono font-bold tracking-tighter">{totalPlays.toLocaleString()}</span>
+            </div>
             <div className="text-slate-800 font-mono text-[9px] uppercase tracking-widest">
               BUILD: TG16-2025.02-X.RELEASE
             </div>
-            <div className="px-2 py-0.5 bg-purple-500/10 rounded border border-purple-500/20 text-purple-500 text-[8px] font-black uppercase">v1.0.4-STABLE</div>
+            <div 
+              onClick={handleSecretTrigger}
+              className="px-2 py-0.5 bg-purple-500/10 rounded border border-purple-500/20 text-purple-500 text-[8px] font-black uppercase cursor-help select-none active:scale-95 transition-transform"
+            >
+              v1.0.4-STABLE
+            </div>
           </div>
         </div>
       </footer>

@@ -12,7 +12,7 @@ const GameCard: React.FC<GameCardProps> = ({ game, onClick }) => {
       className="group bg-slate-900/40 rounded-2xl overflow-hidden cursor-pointer border border-slate-800/60 hover:border-purple-500/50 transition-all hover:-translate-y-1.5 duration-500 shadow-xl hover:shadow-purple-500/10"
       onClick={() => onClick(game)}
     >
-      <div className="relative aspect-video overflow-hidden bg-slate-950">
+      <div className="relative aspect-square overflow-hidden bg-slate-950">
         <img 
           src={game.thumbnail} 
           alt={game.title} 

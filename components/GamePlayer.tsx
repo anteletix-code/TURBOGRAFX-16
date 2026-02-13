@@ -13,6 +13,10 @@ const GamePlayer: React.FC<GamePlayerProps> = ({ game, onBack }) => {
     setIsFullscreen(!isFullscreen);
   };
 
+  const openInNewTab = () => {
+    window.open(game.iframeUrl, '_blank');
+  };
+
   return (
     <div className="max-w-6xl mx-auto py-6 px-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <button 
@@ -49,6 +53,15 @@ const GamePlayer: React.FC<GamePlayerProps> = ({ game, onBack }) => {
             </div>
             
             <div className="flex items-center gap-2">
+              <button 
+                onClick={openInNewTab}
+                className="bg-slate-800 hover:bg-purple-500 text-white p-2.5 rounded-xl transition-all active:scale-95 shadow-lg group/tab"
+                title="Open in New Tab"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </button>
               <button 
                 onClick={toggleFullscreen}
                 className="bg-slate-800 hover:bg-purple-500 text-white p-2.5 rounded-xl transition-all active:scale-95 shadow-lg"
