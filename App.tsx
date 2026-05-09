@@ -11,7 +11,6 @@ const App: React.FC = () => {
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchTerm, setSearchTerm] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
   const [visitorCount, setVisitorCount] = useState<number>(0);
   const [totalPlays, setTotalPlays] = useState<number>(0);
   const [recentlyPlayed, setRecentlyPlayed] = useState<Game[]>([]);
@@ -41,9 +40,6 @@ const App: React.FC = () => {
         .filter((g): g is Game => !!g);
       setRecentlyPlayed(recentGames);
     }
-    
-    const timer = setTimeout(() => setIsLoading(false), 1200);
-    return () => clearTimeout(timer);
   }, []);
 
   const filteredGames = useMemo(() => {
@@ -86,35 +82,6 @@ const App: React.FC = () => {
       setSecretClicks(next);
     }
   };
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-[#020617] flex flex-col items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
-        <div className="w-20 h-20 turbo-gradient rounded-2xl turbo-shadow animate-bounce flex items-center justify-center mb-8 relative z-10 overflow-hidden">
-           <img src="https://media.wired.com/photos/5e62e660ebca410008eea08f/1:1/w_1758,h_1758,c_limit/Gear-Ars-TG-16-Min-SOURCE-Amazon.jpg" alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="space-y-2 text-center relative z-10">
-          <h2 className="font-orbitron text-2xl font-black tracking-[0.5em] text-white uppercase italic">
-            TURBOGRAFX <span className="text-purple-500">16</span>
-          </h2>
-          <div className="flex flex-col items-center gap-2">
-            <div className="h-1 w-48 bg-slate-900 rounded-full overflow-hidden">
-              <div className="h-full bg-purple-500 animate-[loading_1.2s_ease-in-out_infinite]"></div>
-            </div>
-            <p className="text-slate-600 font-mono text-[10px] tracking-[0.3em] uppercase animate-pulse">Initializing Purple Engine</p>
-          </div>
-        </div>
-        <style>{`
-          @keyframes loading {
-            0% { width: 0%; transform: translateX(-100%); }
-            50% { width: 100%; transform: translateX(0%); }
-            100% { width: 0%; transform: translateX(100%); }
-          }
-        `}</style>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen flex flex-col bg-[#020617]">
