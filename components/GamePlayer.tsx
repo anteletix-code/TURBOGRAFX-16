@@ -14,7 +14,20 @@ const GamePlayer: React.FC<GamePlayerProps> = ({ game, onBack }) => {
   };
 
   const openInNewTab = () => {
-    window.open(game.iframeUrl, '_blank');
+    const newWin = window.open('about:blank', '_blank');
+    if (newWin) {
+      newWin.document.title = 'about:blank';
+      newWin.document.body.style.margin = '0';
+      newWin.document.body.style.height = '100vh';
+      newWin.document.body.style.overflow = 'hidden';
+      const iframe = newWin.document.createElement('iframe');
+      iframe.style.border = 'none';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.margin = '0';
+      iframe.src = game.iframeUrl;
+      newWin.document.body.appendChild(iframe);
+    }
   };
 
   return (
@@ -78,31 +91,13 @@ const GamePlayer: React.FC<GamePlayerProps> = ({ game, onBack }) => {
 
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
         <div className="lg:col-span-2 space-y-6">
-          <div className="space-y-2">
-            <h3 className="font-orbitron font-black text-sm text-purple-500 uppercase tracking-[0.2em]">Mission Briefing</h3>
-            <p className="text-slate-300 leading-relaxed text-lg font-medium italic">
-              "{game.description}"
-            </p>
-          </div>
-          
-          <div className="p-1 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 rounded-2xl">
-            <div className="bg-slate-950 p-6 rounded-[calc(1rem-1px)] border border-white/5">
-              <h4 className="font-orbitron text-xs font-black text-white uppercase tracking-widest mb-4">Controls & Tips</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Standard WASD or Arrow keys for movement. Use Space or Enter for primary actions. Some games may require mouse interaction. If the game doesn't load, try disabling your ad-blocker as some iframe providers require it.
-              </p>
-            </div>
-          </div>
+          {/* Content removed per request */}
         </div>
         
         <div className="space-y-6">
           <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
             <h3 className="font-orbitron font-black text-[10px] text-slate-500 uppercase tracking-[0.3em] mb-5">System Metadata</h3>
             <div className="space-y-4">
-              <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-500 font-bold uppercase">Performance Rating</span>
-                <span className="text-amber-500 font-black tracking-widest">★ {game.rating}</span>
-              </div>
               <div className="flex justify-between items-center text-xs">
                 <span className="text-slate-500 font-bold uppercase">Architecture</span>
                 <span className="text-white font-black tracking-widest">WEB-16</span>

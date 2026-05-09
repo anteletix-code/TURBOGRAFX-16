@@ -201,15 +201,12 @@ const App: React.FC = () => {
                       <div className="px-5 py-2 bg-black text-purple-500 font-orbitron font-black italic skew-x-[-12deg] tracking-widest text-lg shadow-xl border-l-4 border-purple-500">
                         - y. mustard
                       </div>
-                      <p className="text-white/80 text-lg font-medium tracking-tight leading-relaxed max-w-sm mt-4 md:mt-0">
-                        Experience the fastest unblocked gaming console ever built. Pure adrenaline, zero restrictions.
-                      </p>
                     </div>
                   </div>
                   
                   <div className="relative hidden lg:block">
                      <div className="w-64 h-64 border-8 border-white/10 rounded-3xl rotate-12 flex items-center justify-center animate-pulse-glow bg-black/20 backdrop-blur-sm overflow-hidden">
-                        <img src="https://media.wired.com/photos/5e62e660ebca410008eea08f/1:1/w_1758,h_1758,c_limit/Gear-Ars-TG-16-Min-SOURCE-Amazon.jpg" alt="" className="w-full h-full object-cover scale-150" />
+                        <img src="https://media.wired.com/photos/5e62e660ebca410008eea08f/1:1/w_1758,h_1758,c_limit/Gear-Ars-TG-16-Min-SOURCE-Amazon.jpg" alt="" className="w-full h-full object-cover p-0" />
                      </div>
                   </div>
                 </div>
@@ -370,13 +367,13 @@ const App: React.FC = () => {
               <span className="text-[10px] text-fuchsia-500 font-mono font-bold tracking-tighter">{totalPlays.toLocaleString()}</span>
             </div>
             <div className="text-slate-800 font-mono text-[9px] uppercase tracking-widest">
-              BUILD: TG16-2025.02-X.RELEASE
+              WEBSITE VERSION: PROTOTYPE 1
             </div>
             <div 
               onClick={handleSecretTrigger}
               className="px-2 py-0.5 bg-purple-500/10 rounded border border-purple-500/20 text-purple-500 text-[8px] font-black uppercase cursor-help select-none active:scale-95 transition-transform"
             >
-              v1.0.4-STABLE
+              PROTOTYPE 1
             </div>
           </div>
         </div>

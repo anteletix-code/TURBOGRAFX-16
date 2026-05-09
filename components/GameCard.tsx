@@ -29,18 +29,11 @@ const GameCard: React.FC<GameCardProps> = ({ game, onClick }) => {
         </div>
       </div>
       <div className="p-4 border-t border-white/5">
-        <div className="flex justify-between items-center mb-1.5">
+        <div className="flex justify-between items-center">
           <h3 className="font-orbitron font-bold text-base text-white group-hover:text-purple-500 transition-colors truncate pr-2 tracking-tight">
             {game.title}
           </h3>
-          <div className="flex items-center gap-1 text-[10px] text-amber-500 font-black bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
-            <span>★</span>
-            <span>{game.rating}</span>
-          </div>
         </div>
-        <p className="text-slate-500 text-[10px] line-clamp-2 leading-relaxed font-semibold uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity">
-          {game.description}
-        </p>
       </div>
     </div>
   );
