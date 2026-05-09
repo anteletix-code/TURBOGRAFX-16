@@ -1,4 +1,3 @@
-import React from 'react';
 import { Game } from '../types';
 
 interface GameCardProps {
@@ -6,7 +5,7 @@ interface GameCardProps {
   onClick: (game: Game) => void;
 }
 
-const GameCard: React.FC<GameCardProps> = ({ game, onClick }) => {
+const GameCard = ({ game, onClick }: GameCardProps) => {
   return (
     <div 
       className="group bg-slate-900/40 rounded-2xl overflow-hidden cursor-pointer border border-slate-800/60 hover:border-purple-500/50 transition-all hover:-translate-y-1.5 duration-500 shadow-xl hover:shadow-purple-500/10"

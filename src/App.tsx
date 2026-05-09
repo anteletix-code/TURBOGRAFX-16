@@ -1,12 +1,12 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { CATEGORIES } from './constants.ts';
-import { Game } from './types.ts';
-import { gamesData } from './games.ts';
-import Navbar from './components/Navbar.tsx';
-import GameCard from './components/GameCard.tsx';
-import GamePlayer from './components/GamePlayer.tsx';
+import { useState, useMemo, useEffect } from 'react';
+import { CATEGORIES } from './constants';
+import { Game } from './types';
+import { gamesData } from './games';
+import Navbar from './components/Navbar';
+import GameCard from './components/GameCard';
+import GamePlayer from './components/GamePlayer';
 
-const App: React.FC = () => {
+const App = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -45,7 +45,9 @@ const App: React.FC = () => {
   const filteredGames = useMemo(() => {
     return games.filter((game) => {
       const matchesCategory = activeCategory === 'All' || game.category === activeCategory;
-      const matchesSearch = game.title.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = 
+        game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (game.tags && game.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())));
       return matchesCategory && matchesSearch;
     });
   }, [games, activeCategory, searchTerm]);

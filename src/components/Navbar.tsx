@@ -1,12 +1,10 @@
-import React from 'react';
-
 interface NavbarProps {
   onHomeClick: () => void;
   searchTerm: string;
   setSearchTerm: (term: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onHomeClick, searchTerm, setSearchTerm }) => {
+const Navbar = ({ onHomeClick, searchTerm, setSearchTerm }: NavbarProps) => {
   return (
     <nav className="sticky top-0 z-[60] glass border-b border-white/5 px-4 py-3 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">

@@ -6,6 +6,7 @@ export interface Game {
   iframeUrl: string;
   category: 'Action' | 'Puzzle' | 'Sports' | 'Retro' | 'Strategy' | 'Horror' | 'RPG' | 'Simulator';
   rating: number;
+  tags?: string[];
 }
 
 export type ViewState = 'home' | 'game-detail' | 'category';

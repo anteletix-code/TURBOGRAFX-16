@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Game } from '../types';
 
 interface GamePlayerProps {
@@ -6,7 +6,7 @@ interface GamePlayerProps {
   onBack: () => void;
 }
 
-const GamePlayer: React.FC<GamePlayerProps> = ({ game, onBack }) => {
+const GamePlayer = ({ game, onBack }: GamePlayerProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const toggleFullscreen = () => {

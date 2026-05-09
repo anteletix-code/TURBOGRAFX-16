@@ -6,7 +6,8 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/7/7c/Doki_Doki_Literature_Club_Cover.jpg",
     "iframeUrl": "https://gamingshitposting.github.io/ext-bin-1/games/DDLC-1.1.1-web/index.html",
     "category": "Horror",
-    "rating": 5.0
+    "rating": 5.0,
+    "tags": ["ddlc", "doki", "monika"]
   },
   {
     "id": "escape-road",
@@ -60,6 +61,113 @@
     "thumbnail": "https://i.scdn.co/image/ab67656300005f1f117aafabf5883177e9f8f79a",
     "iframeUrl": "/andy-and-leyley.html",
     "category": "Horror",
+    "rating": 4.9,
+    "tags": ["tcoaal", "andy", "leyley"]
+  },
+  {
+    "id": "baldis-basics",
+    "title": "Baldi's Basics",
+    "description": "Baldi's Basics in Education and Learning is a state-of-the-art, fully 3D interactive, fun-time educational game that teaches a slew of subjects! From math to spelling, you'll learn a lot!",
+    "thumbnail": "https://images.squarespace-cdn.com/content/v1/6491eb91bb711304dd556188/183e6f31-dd2a-4a90-969e-3ba2936ca8a1/baldisbasics_plus",
+    "iframeUrl": "/baldis-basics.html",
+    "category": "Retro",
+    "rating": 4.5
+  },
+  {
+    "id": "baldi-remastered",
+    "title": "Baldi's Basics Classic Remastered",
+    "description": "Baldi's Basics Classic Remastered is a state-of-the-art, fully 3D interactive, fun-time educational game that teaches a slew of subjects! A remastered classic experience with improved visuals and performance.",
+    "thumbnail": "https://cdn2.steamgriddb.com/icon_thumb/79ee9d25b9de58d3a33b3cdb9338dc23.png",
+    "iframeUrl": "/baldi-remastered.html",
+    "category": "Retro",
+    "rating": 4.8
+  },
+  {
+    "id": "baldi-ultra-decompile",
+    "title": "Baldi's Basics The Ultra Decompile",
+    "description": "The ultimate decompile of Baldi's Basics! Experience the game with tons of new features, secrets, and gameplay improvements in this ultra-enhanced version.",
+    "thumbnail": "https://images.gamebanana.com/img/ss/mods/68ae6af53eeb0.jpg",
+    "iframeUrl": "/baldi-ultra-decompile.html",
+    "category": "Retro",
     "rating": 4.9
+  },
+  {
+    "id": "baldi-fun-school",
+    "title": "Baldi's Fun New School Plus Ultimate Edition",
+    "description": "Baldi's Fun New School Plus Ultimate Edition is a state-of-the-art Baldi's Basics mod with tons of new modes, maps, and features! Explore a massive school and encounter new characters in this ultimate version.",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8j2huPzoDLDLnZ6iaLvCMn3vaZQVUIk7Org&s",
+    "iframeUrl": "/baldi-fun-school.html",
+    "category": "Retro",
+    "rating": 4.9
+  },
+  {
+    "id": "fnaf-1",
+    "title": "Five Nights at Freddy's 1",
+    "description": "Welcome to your new summer job at Freddy Fazbear's Pizza, where kids and parents alike come for entertainment and food as far as the eye can see! The main attraction is Freddy Fazbear, of course; and his two friends. They are animatronic robots, programmed to please the crowds!",
+    "thumbnail": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18362_00/1/i_cd6a177c374f229f9cd8e1164a78d49f78af97820747d480daf8cdd3e965c248/i/icon0.png",
+    "iframeUrl": "/fnaf-1.html",
+    "category": "Horror",
+    "rating": 4.9,
+    "tags": ["fnaf", "fnaf1", "freddy"]
+  },
+  {
+    "id": "fnaf-2",
+    "title": "Five Nights at Freddy's 2",
+    "description": "Welcome back to the new and improved Freddy Fazbear's Pizza! In Five Nights at Freddy's 2, the old and aging animatronics are joined by a new cast of characters. They are kid-friendly, updated with the latest in facial recognition technology, tied into local criminal databases, and promise to put on a safe and entertaining show for kids and grown-ups alike!",
+    "thumbnail": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18364_00/2/i_c59da73a0d4ce6e894622a5b396627a0133e521d01376d05f978c4d036fc4d16/i/icon0.png",
+    "iframeUrl": "/fnaf-2.html",
+    "category": "Horror",
+    "rating": 4.9,
+    "tags": ["fnaf", "fnaf2", "freddy", "toy"]
+  },
+  {
+    "id": "fnaf-3",
+    "title": "Five Nights at Freddy's 3",
+    "description": "Thirty years after Freddy Fazbear's Pizza closed its doors, the events that took place there have become nothing more than a rumor and a childhood memory, but the owners of 'Fazbear's Fright: The Horror Attraction' are determined to revive the legend and make the experience as authentic as possible for patrons, going to great lengths to find anything that might have survived decades of neglect and ruin.",
+    "thumbnail": "https://play-lh.googleusercontent.com/A9kng-j9BLaA2dhRGsPExmjy9E4vfG-GHefvmyywT0J67ZEPGONIsFYlIokL5EUNfiHF",
+    "iframeUrl": "/fnaf-3.html",
+    "category": "Horror",
+    "rating": 4.9,
+    "tags": ["fnaf", "fnaf3", "springtrap"]
+  },
+  {
+    "id": "fnaf-4",
+    "title": "Five Nights at Freddy's 4",
+    "description": "In this last chapter of the Five Nights at Freddy's original story, you must once again defend yourself against Freddy Fazbear, Chica, Bonnie, Foxy, and even worse things that lurk in the shadows. Playing as a child whose role is yet unknown, you must safeguard yourself until 6am by watching the doors, as well as warding off unwanted creatures that may venture into your closet or onto the bed behind you.",
+    "thumbnail": "https://lh3.googleusercontent.com/sitesv/AA5AbUDjX-st5fGmmuoLb-oYokOfmbu8zVZF1MjSLFvuMyKquQDBZVSafo61n8VoBCJhSqqPYEUJY6QECnst3b12y6izFlm50vHN4v-AFDsPslWOOPESNzjodXJ3bDt1RmKYmJRZcfmhHurGBrt6ghAnqTCjG3Kkzvi2OPT2JZeeew-CX2DvgmgxCAYcCL8=w1280",
+    "iframeUrl": "/fnaf-4.html",
+    "category": "Horror",
+    "rating": 4.9,
+    "tags": ["fnaf", "fnaf4", "nightmare"]
+  },
+  {
+    "id": "fnaf-4-halloween",
+    "title": "Five Nights at Freddy's 4 Halloween Edition",
+    "description": "Experience the terrifying Halloween Edition of Five Nights at Freddy's 4! Featuring new animatronic designs and spooky updates to the classic survival horror gameplay.",
+    "thumbnail": "https://m.gjcdn.net/game-screenshot/300/37877386-2qrgguaa-v4.webp",
+    "iframeUrl": "/fnaf-4-halloween.html",
+    "category": "Horror",
+    "rating": 4.9,
+    "tags": ["fnaf", "fnaf4", "halloween", "nightmare"]
+  },
+  {
+    "id": "fnaf-world",
+    "title": "Five Nights at Freddy's World",
+    "description": "FNaF World is a role-playing game featuring characters from the Five Nights at Freddy's series. Explore a colorful world and build your team of animatronics!",
+    "thumbnail": "https://images.sftcdn.net/images/t_app-cover-s,f_auto/p/e82a9b66-96d0-11e6-9760-00163ed833e7/2953041922/five-nights-at-freddys-world-screenshot.jpg",
+    "iframeUrl": "/fnaf-world.html",
+    "category": "RPG",
+    "rating": 4.7,
+    "tags": ["fnaf", "world", "rpg"]
+  },
+  {
+    "id": "fnaf-sl",
+    "title": "Five Nights at Freddy's Sister Location",
+    "description": "Welcome to Circus Baby's Pizza World, where family fun and interactivity go beyond anything you've seen at those *other* pizza places! With cutting-edge animatronic entertainers that will knock your kids' socks off, as well as customized pizza catering, no party is complete without Circus Baby and the gang!",
+    "thumbnail": "https://lh3.googleusercontent.com/sitesv/AA5AbUCQRsHHdNHBhLSxV4b10X07fByKbHsdnHt_klHB6xkfBELDZCxV3TtMxbgDYrzkNzDzfC3VOkyQuhQhNUISzXXb6PZUsyT7YzazMxsVICsJw1AApP8FVlxjYRJkW6wp5dzqQuEds8SdGGfvF8tnbAijuQg2F_vwcy68ufivUQp-7IGyGU42vbkasZLLQd5oYXZTpHPty3udy8dTPD6OCizg2QIe0MDS0y01GU4=w1280",
+    "iframeUrl": "/fnaf-sl.html",
+    "category": "Horror",
+    "rating": 4.9,
+    "tags": ["fnaf", "sl", "sisterlocation", "baby"]
   }
 ]
